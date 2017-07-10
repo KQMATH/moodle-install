@@ -25,8 +25,17 @@ to be useful in any other context.
 
 4.  Configure apache.
 
+   sudo vi /etc/apache2/sites-available/000-default.conf 
+
+   Edit the following two lines:
+
+   ServerAdmin hasc@ntnu.no
+   DocumentRoot /var/www/moodle
+
+5.  Create the DB tables.
+
    TODO
 
-5.  Run the moodle install script.
+6.  Run the moodle install script.
 
-  ./install.sh
+   sudo ./install.sh

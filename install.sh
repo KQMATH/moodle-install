@@ -1,10 +1,11 @@
 #! /bin/sh
 
 mkdir /var/moodledata 
-chgrp -R www-data /var/moodledata /var/www/html
-chmod g+rwX /var/moodledata /var/www/html
+chgrp -R www-data /var/www/html
+chown -R www-data.www-data /var/moodledata
+chmod g+rwX /var/moodledata /var/www/moodle
 
-/usr/bin/php admin/cli/install_database.php \
+sudo -u www-data /usr/bin/php admin/cli/install_database.php \
             --agree-license --non-interactive \
             --adminemail=hasc@ntnu.no \
             --fullname="KQMATH Moodle Server" \
