@@ -1,6 +1,6 @@
 #! /bin/sh
 
-mkdir /var/moodledata 
+mkdir -p /var/moodledata 
 chgrp -R www-data /var/www/html
 chown -R www-data.www-data /var/moodledata
 chmod g+rwX /var/moodledata /var/www/moodle

@@ -13,6 +13,7 @@ to be useful in any other context.
 2.  Install dependencies (assuming postgresql is already installed).
 
    sudo apt-get install maxima gnuplot apache2 php php-pear phppgadmin
+   sudo apt-get install php-curl php-zip php-gd 
 
 3.  Clone the KQMATH moodle repo into the web directory.
 
@@ -32,7 +33,7 @@ to be useful in any other context.
    ServerAdmin hasc@ntnu.no
    DocumentRoot /var/www/moodle
 
-5.  Create the DB tables.
+5.  Create the DB.
 
    $ sudo -u postgres psql
    postgres=# CREATE USER moodleuser WITH PASSWORD 'KlasseromsQuiz';
@@ -56,3 +57,16 @@ to be useful in any other context.
 7.  Run the moodle install script.
 
    sudo ./install.sh
+
+* Additional notes on reinstallation
+
+Step 5.
+
+   Drop the existing database.
+
+   postgres=# DROP DATABASE moodle ;
+   DROP DATABASE
+
+   The create the DB as above.  It is not necessary to create the user.
+
+  
