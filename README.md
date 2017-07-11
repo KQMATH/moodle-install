@@ -19,7 +19,7 @@ to be useful in any other context.
 
    cd /var/www
    sudo chown $USER .
-   git clone --recursive git@github.com:KQMATH/moodle.git
+   git clone --branch KQM_33 --recursive git@github.com:KQMATH/moodle.git
 
    We use the KQMATH version because it includes a ready-made config
    file and all the required plugins as submodules.
