@@ -34,8 +34,25 @@ to be useful in any other context.
 
 5.  Create the DB tables.
 
-   TODO
+   $ sudo -u postgres psql
+   postgres=# CREATE USER moodleuser WITH PASSWORD 'KlasseromsQuiz';
+   CREATE ROLE
+   postgres=# CREATE DATABASE moodle WITH OWNER moodleuser;
+   CREATE DATABASE
 
-6.  Run the moodle install script.
+   See https://docs.moodle.org/33/en/PostgreSQL for details
+
+6.  Configure db access.
+
+  sudo vi /etc/postgresql/9.5/main/pg_hba.conf 
+
+  Moodle wants to send passwords in cleartext.  This requires the
+  following two lines in the file.
+
+  host    moodle        moodleuser      127.0.0.1/32            password
+  host    moodle        moodleuser      ::1/128                 password
+
+
+7.  Run the moodle install script.
 
    sudo ./install.sh
