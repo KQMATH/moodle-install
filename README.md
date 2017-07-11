@@ -13,12 +13,13 @@ to be useful in any other context.
 2.  Install dependencies (assuming postgresql is already installed).
 
    sudo apt-get install maxima gnuplot apache2 php php-pear phppgadmin
+   sudo apt-get install php-curl php-zip php-gd 
 
 3.  Clone the KQMATH moodle repo into the web directory.
 
    cd /var/www
    sudo chown $USER .
-   git clone --recursive git@github.com:KQMATH/moodle.git
+   git clone --branch KQM_33 --recursive git@github.com:KQMATH/moodle.git
 
    We use the KQMATH version because it includes a ready-made config
    file and all the required plugins as submodules.
@@ -32,7 +33,7 @@ to be useful in any other context.
    ServerAdmin hasc@ntnu.no
    DocumentRoot /var/www/moodle
 
-5.  Create the DB tables.
+5.  Create the DB.
 
    $ sudo -u postgres psql
    postgres=# CREATE USER moodleuser WITH PASSWORD 'KlasseromsQuiz';
@@ -56,3 +57,29 @@ to be useful in any other context.
 7.  Run the moodle install script.
 
    sudo ./install.sh
+
+* Additional notes on reinstallation
+
+Step 5.
+
+   Drop the existing database.
+
+   postgres=# DROP DATABASE moodle ;
+   DROP DATABASE
+
+   The create the DB as above.  It is not necessary to create the user.
+
+  
+* Settings to change
+
+The DB password is hardcoded in config.php and in the PostgreSQL command
+above.  This should be changed, although it may not be a problem. The
+default config does not appear to accept DB connections from a remote
+host.
+
+The Moodle admin password is hardcoded in install.sh.  This MUST be changed.
+
+The root URL is hardcoded in config.php, and must be changed for installation
+on a different host.
+
+Note. config.php is in the moodle repo.
