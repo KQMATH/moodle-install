@@ -70,3 +70,14 @@ Step 5.
    The create the DB as above.  It is not necessary to create the user.
 
   
+* Settings to change
+
+The DB password is hardcoded in config.php and in the PostgreSQL command
+above.  This should be changed, although it may not be a problem. The
+default config does not appear to accept DB connections from a remote
+host.
+
+The Moodle admin password is hardcoded in install.sh.  This MUST be changed.
+
+The root URL is hardcoded in config.php, and must be changed for installation
+on a different host.
