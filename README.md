@@ -81,3 +81,5 @@ The Moodle admin password is hardcoded in install.sh.  This MUST be changed.
 
 The root URL is hardcoded in config.php, and must be changed for installation
 on a different host.
+
+Note. config.php is in the moodle repo.
