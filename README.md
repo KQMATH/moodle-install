@@ -18,7 +18,22 @@ to be useful in any other context.
    sudo apt-get install gnuplot sendmail gdebi
    ```
 
-3.  Set up email for PHP
+3.  Configure the website in apache2
+
+   ```
+   sudo vi /etc/apache2/sites-available/000-default.conf
+   ```
+
+   Add your e-mail as server admin, and change the document root as
+   follows.
+
+   ```
+   ServerAdmin hasc@ntnu.no
+   DocumentRoot /var/www/moodle/
+   ```
+
+
+4.  Set up email for PHP
 
    3a. Configure sendmail
 
@@ -34,13 +49,13 @@ to be useful in any other context.
 
    sudo /etc/init.d/apache2 restart
 
-4.  Install maxima
+5.  Install maxima
 
    sudo gdebi maxima_5.40.0-1_amd64.deb
 
    (Note. This step has not been tested.)
 
-5.  Clone the KQMATH moodle repo into the web directory.
+6.  Clone the KQMATH moodle repo into the web directory.
 
    ```
    cd /var/www
@@ -51,7 +66,7 @@ to be useful in any other context.
    We use the KQMATH version because it includes a ready-made config
    file and all the required plugins as submodules.
 
-6.  Configure apache.
+7.  Configure apache.
 
    sudo vi /etc/apache2/sites-available/000-default.conf 
 
@@ -60,7 +75,7 @@ to be useful in any other context.
    ServerAdmin hasc@ntnu.no
    DocumentRoot /var/www/moodle
 
-7.  Create the DB.
+8.  Create the DB.
 
    ```
    $ sudo -u postgres psql
@@ -72,7 +87,7 @@ to be useful in any other context.
 
    See https://docs.moodle.org/33/en/PostgreSQL for details
 
-8.  Configure db access.
+9.  Configure db access.
 
   sudo vi /etc/postgresql/9.5/main/pg_hba.conf 
 
@@ -83,13 +98,13 @@ to be useful in any other context.
   host    moodle        moodleuser      ::1/128                 password
 
 
-9.  Run the moodle install script.
+10.  Run the moodle install script.
 
    sudo ./install.sh
 
 * Additional notes on reinstallation
 
-Step 5.
+Step 6.
 
    Drop the existing database.
 
