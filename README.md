@@ -12,9 +12,11 @@ to be useful in any other context.
 
 2.  Install dependencies (assuming postgresql is already installed).
 
+   ```
    sudo apt-get install apache2 php php-pear phppgadmin libapache2-mod-php
    sudo apt-get install php-curl php-zip php-gd 
    sudo apt-get install gnuplot sendmail gdebi
+   ```
 
 3.  Set up email for PHP
 
@@ -40,9 +42,11 @@ to be useful in any other context.
 
 5.  Clone the KQMATH moodle repo into the web directory.
 
+   ```
    cd /var/www
    sudo chown $USER .
    git clone --branch KQM_33 --recursive git@github.com:KQMATH/moodle.git
+   ```
 
    We use the KQMATH version because it includes a ready-made config
    file and all the required plugins as submodules.
@@ -58,11 +62,13 @@ to be useful in any other context.
 
 7.  Create the DB.
 
+   ```
    $ sudo -u postgres psql
    postgres=# CREATE USER moodleuser WITH PASSWORD 'KlasseromsQuiz';
    CREATE ROLE
    postgres=# CREATE DATABASE moodle WITH OWNER moodleuser;
    CREATE DATABASE
+   ```
 
    See https://docs.moodle.org/33/en/PostgreSQL for details
 
