@@ -32,7 +32,6 @@ to be useful in any other context.
    DocumentRoot /var/www/moodle/
    ```
 
-
 4.  Set up email for PHP
 
    3a. Configure sendmail
