@@ -18,7 +18,7 @@ to be useful in any other context.
    sudo apt-get install gnuplot sendmail gdebi
    ```
 
-3.  Set up email for PHP
+3.  Set up the web server including email for PHP
 
    3a. Configure sendmail
 
