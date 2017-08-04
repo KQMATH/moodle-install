@@ -13,6 +13,8 @@ sed -i -e "s/^[ 	]*ServerAdmin.*$/  ServerAdmin hasc@ntnu.no/" \
        /etc/apache2/sites-available/000-default.conf
 
 
+sudo crontab crontab
+sudo certbot --apache -d moodle.uials.no 
 
 cd /var/www/moodle 
 sudo -u www-data /usr/bin/php admin/cli/install_database.php \
@@ -23,5 +25,3 @@ sudo -u www-data /usr/bin/php admin/cli/install_database.php \
             --summary="Server for the KQMATH (Classroom Quiz) moodle plugin" \
             --adminpass=M00dle 
 
-certbot --apache -d moodle.uials.no 
-crontab crontab
