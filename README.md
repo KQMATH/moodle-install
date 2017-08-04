@@ -13,7 +13,10 @@ to be useful in any other context.
 2.  Install dependencies (assuming postgresql is already installed).
 
    ```
+   sudo add-apt-repository ppa:certbot/certbot
+   sudo apt-get update
    sudo apt-get install apache2 php php-pear phppgadmin libapache2-mod-php
+   sudo apt-get install python-certbot-apache
    sudo apt-get install php-curl php-zip php-gd 
    sudo apt-get install gnuplot sendmail gdebi
    ```

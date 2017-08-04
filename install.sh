@@ -13,3 +13,6 @@ sudo -u www-data /usr/bin/php admin/cli/install_database.php \
             --shortname="KQMATH" \
             --summary="Server for the KQMATH (Classroom Quiz) moodle plugin" \
             --adminpass=M00dle 
+
+sudo certbot --apache -d moodle.uials.no 
+sudo crontab crontab
