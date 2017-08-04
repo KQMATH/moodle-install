@@ -15,46 +15,18 @@ to be useful in any other context.
    ```
    sudo add-apt-repository ppa:certbot/certbot
    sudo apt-get update
-   sudo apt-get install apache2 php php-pear phppgadmin libapache2-mod-php
-   sudo apt-get install python-certbot-apache
-   sudo apt-get install php-curl php-zip php-gd 
-   sudo apt-get install gnuplot sendmail gdebi
+   sudo apt-get install apache2 php php-pear phppgadmin libapache2-mod-php \
+             python-certbot-apache php-curl php-zip php-gd \
+             gnuplot sendmail gdebi
    ```
 
-3.  Set up the web server including email for PHP
-
-   3a. Configure sendmail
+3.  Configure sendmail
 
    ```
    sudo sendmailconfig
    ```
 
    Answer Y to every question
-
-   3b. Add the following line to /etc/hosts
-
-   ```
-   127.0.0.1 localhost localhost.localdomain moodle.uials.no
-   ```
-
-   3c.  Configure the website.
-
-   ```
-   sudo vi /etc/apache2/sites-available/000-default.conf 
-   ```
-
-   Edit the following two lines:
-
-   ```
-   ServerAdmin hasc@ntnu.no
-   DocumentRoot /var/www/moodle
-   ```
-
-   3d. Restart Apache with the following command
-
-   ```
-   sudo /etc/init.d/apache2 restart
-   ```
 
 4.  Install maxima
 
@@ -134,8 +106,10 @@ host.
 
 The Moodle admin password is hardcoded in install.sh.  This MUST be changed.
 
-The root URL is hardcoded in config.php, and must be changed for installation
-on a different host.
+The hostname is hardcoded in the following files and must be changed
+for installation on a different host.
+  - config.php (moodle repo) - check the moodle URL
+  - hosts (this repo)
 
 The host name is explicit in the sendmail config above (Step 3).
 
