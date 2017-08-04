@@ -1,1 +1,1 @@
-sudo certbot --apache -d example.com -d www.example.com
+42 2 * * * /usr/bin/certbot renew --quiet
