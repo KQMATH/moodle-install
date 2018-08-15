@@ -28,7 +28,7 @@ to be useful in any other context.
 
    Answer Y to every question
 
-4.  Install maxima
+4.  Install maxima (if you are going to use STACK)
 
    ```
    sudo gdebi maxima_5.40.0-1_amd64.deb
@@ -110,6 +110,7 @@ The hostname is hardcoded in the following files and must be changed
 for installation on a different host.
   - config.php (moodle repo) - check the moodle URL
   - hosts (this repo)
+  - install.sh (this repo)
 
 The host name is explicit in the sendmail config above (Step 3).
 
